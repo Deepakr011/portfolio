@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | Deepak R</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">Portfolio</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">Deepak R</h1>
+            <p class="hero-role">Innovator &bull; Engineer &bull; Creator</p>
+            <p class="hero-desc">Building innovative solutions from agriculture to AI-powered products. Turning ideas into reality through engineering and technology.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Get in Touch</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="13">0</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="4">0</span>
+                    <span class="stat-label">Categories</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="50">0</span>
+                    <span class="stat-label">Images</span>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a passionate engineer and innovator with expertise spanning multiple domains including agriculture technology, AI/ML, IoT systems, and hardware prototyping. My work focuses on creating practical, impactful solutions that bridge the gap between technology and real-world problems.</p>
+                    <p>From building AI-powered teacher robots to developing hydroponic systems, from forest security systems to medical devices — each project represents a step toward making technology accessible and useful for everyone.</p>
+                    <div class="skills">
+                        <span class="skill-tag">IoT</span>
+                        <span class="skill-tag">AI/ML</span>
+                        <span class="skill-tag">Hardware Design</span>
+                        <span class="skill-tag">Agriculture Tech</span>
+                        <span class="skill-tag">Robotics</span>
+                        <span class="skill-tag">Sensors</span>
+                        <span class="skill-tag">Embedded Systems</span>
+                        <span class="skill-tag">Prototyping</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <p class="section-subtitle">Explore my work across different domains</p>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="agriculture">
+                    <i class="fas fa-seedling"></i> Agriculture
+                </button>
+                <button class="filter-btn" data-filter="innovation">
+                    <i class="fas fa-lightbulb"></i> Innovation
+                </button>
+                <button class="filter-btn" data-filter="products">
+                    <i class="fas fa-cube"></i> Products
+                </button>
+                <button class="filter-btn" data-filter="prototypes">
+                    <i class="fas fa-cogs"></i> Prototypes
+                </button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projects-grid">
+
+                <!-- Agriculture Projects -->
+                <div class="project-card" data-category="agriculture">
+                    <div class="project-image">
+                        <img src="images/agriculture/IMG_2433.jpg" alt="Agriculture Project" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" data-project="agriculture" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category agriculture">Agriculture</span>
+                        <h3 class="project-title">Smart Agriculture Systems</h3>
+                        <p class="project-desc">Advanced farming solutions leveraging IoT sensors and automation for precision agriculture and crop monitoring.</p>
+                        <div class="project-gallery-thumbs" data-project="agriculture">
+                            <img src="images/agriculture/IMG_2433.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/agriculture/IMG_1795.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                            <img src="images/agriculture/IMG_1791.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
+                            <img src="images/agriculture/IMG_2434.jpg" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
+                            <img src="images/agriculture/IMG_2454.jpg" alt="" class="thumb" data-index="4" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Innovation Projects -->
+                <div class="project-card" data-category="innovation">
+                    <div class="project-image">
+                        <img src="images/innovation/IMG_2592.jpg" alt="Innovation Project" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" data-project="innovation" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category innovation">Innovation</span>
+                        <h3 class="project-title">Innovation Lab Projects</h3>
+                        <p class="project-desc">Experimental and cutting-edge innovations exploring new technologies and creative engineering solutions.</p>
+                        <div class="project-gallery-thumbs" data-project="innovation">
+                            <img src="images/innovation/IMG_2592.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/innovation/IMG_2591.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products -->
+                <div class="project-card" data-category="products">
+                    <div class="project-image">
+                        <img src="images/products/christy-ai/IMG_2322.jpg" alt="Christy AI Robot" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" data-project="christy-ai" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category products">Product</span>
+                        <h3 class="project-title">Christy AI Teacher Robot</h3>
+                        <p class="project-desc">An AI-powered educational robot designed to assist teachers and engage students with interactive learning experiences.</p>
+                        <div class="project-gallery-thumbs" data-project="christy-ai">
+                            <img src="images/products/christy-ai/IMG_2322.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/products/christy-ai/IMG_2271.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                            <img src="images/products/christy-ai/IMG_2224.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
+                            <img src="images/products/christy-ai/IMG_2219.jpg" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
+                            <img src="images/products/christy-ai/B7ACEF3C-C9D5-46B1-8D0E-884588A011C7.jpg" alt="" class="thumb" data-index="4" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="products">
+                    <div class="project-image">
+                        <img src="images/products/ayurvedic/07462d84-5c67-4916-afb8-1d735f685ebf.jpg" alt="Ayurvedic Nadi Pariksha" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" data-project="ayurvedic" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category products">Product</span>
+                        <h3 class="project-title">Ayurvedic Nadi Pariksha Device</h3>
+                        <p class="project-desc">A diagnostic device that uses sensor technology to perform traditional Ayurvedic pulse diagnosis (Nadi Pariksha) digitally.</p>
+                        <div class="project-gallery-thumbs" data-project="ayurvedic">
+                            <img src="images/products/ayurvedic/07462d84-5c67-4916-afb8-1d735f685ebf.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/products/ayurvedic/36E498A6-B053-469D-A266-6E15897FCF07.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                            <img src="images/products/ayurvedic/IMG_2385.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
+                            <img src="images/products/ayurvedic/IMG_2388.jpg" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="products">
+                    <div class="project-image">
+                        <img src="images/products/nir-soil/IMG_2345.jpg" alt="NIR Soil Analysis" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" data-project="nir-soil" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category products">Product</span>
+                        <h3 class="project-title">NIR Spectral Soil Analysis</h3>
+                        <p class="project-desc">Near-infrared spectral analysis system for real-time soil composition and nutrient assessment for precision farming.</p>
+                        <div class="project-gallery-thumbs" data-project="nir-soil">
+                            <img src="images/products/nir-soil/IMG_2345.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/products/nir-soil/IMG_2354.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                            <img src="images/products/nir-soil/IMG_2534.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
+                            <img src="images/products/nir-soil/IMG_2536.jpg" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="products">
+                    <div class="project-image">
+                        <img src="images/products/gmit-ai-lab/IMG_2423.jpg" alt="GMIT AI Lab" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" data-project="gmit-ai-lab" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category products">Product</span>
+                        <h3 class="project-title">GMIT AI Lab</h3>
+                        <p class="project-desc">AI laboratory setup and infrastructure development for educational and research purposes at GMIT.</p>
+                        <div class="project-gallery-thumbs" data-project="gmit-ai-lab">
+                            <img src="images/products/gmit-ai-lab/IMG_2423.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/products/gmit-ai-lab/IMG_2424.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                            <img src="images/products/gmit-ai-lab/IMG_2426.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="products">
+                    <div class="project-image">
+                        <img src="images/products/hydroponic/IMG_0023.jpg" alt="Hydroponic Project" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" data-project="hydroponic" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category products">Product</span>
+                        <h3 class="project-title">Vithnet Hydroponic System</h3>
+                        <p class="project-desc">Smart hydroponic farming system with automated nutrient delivery, pH monitoring, and environmental control.</p>
+                        <div class="project-gallery-thumbs" data-project="hydroponic">
+                            <img src="images/products/hydroponic/IMG_0023.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="products">
+                    <div class="project-image">
+                        <img src="images/products/jnnc-hydroponic/IMG_1279.jpg" alt="JNNC Hydroponic" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" data-project="jnnc-hydroponic" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category products">Product</span>
+                        <h3 class="project-title">JNNC Hydroponic Controller</h3>
+                        <p class="project-desc">Automated hydroponic controller system for monitoring and managing water quality, temperature, and nutrient levels.</p>
+                        <div class="project-gallery-thumbs" data-project="jnnc-hydroponic">
+                            <img src="images/products/jnnc-hydroponic/IMG_1279.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/products/jnnc-hydroponic/IMG_1276.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="products">
+                    <div class="project-image">
+                        <img src="images/products/rfid-telephone/IMG_1716.jpg" alt="RFID Telephone" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" data-project="rfid-telephone" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category products">Product</span>
+                        <h3 class="project-title">RFID-Based Telephone System</h3>
+                        <p class="project-desc">Secure telephone access system using RFID authentication for controlled and monitored communication.</p>
+                        <div class="project-gallery-thumbs" data-project="rfid-telephone">
+                            <img src="images/products/rfid-telephone/IMG_1716.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/products/rfid-telephone/IMG_1715.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                            <img src="images/products/rfid-telephone/IMG_1455.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prototypes -->
+                <div class="project-card" data-category="prototypes">
+                    <div class="project-image">
+                        <img src="images/prototypes/final-year/IMG20241212220853.jpg" alt="Final Year Project" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" data-project="final-year" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category prototypes">Prototype</span>
+                        <h3 class="project-title">Final Year Engineering Project</h3>
+                        <p class="project-desc">Comprehensive engineering project showcasing full-stack development from concept to working prototype.</p>
+                        <div class="project-gallery-thumbs" data-project="final-year">
+                            <img src="images/prototypes/final-year/IMG20241212220853.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/prototypes/final-year/IMG20240714113109.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                            <img src="images/prototypes/final-year/IMG20241218111840.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
+                            <img src="images/prototypes/final-year/IMG20250124162955.jpg" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="prototypes">
+                    <div class="project-image">
+                        <img src="images/prototypes/vehicle-plate/IMG_1178.jpg" alt="Vehicle Plate Detection" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" data-project="vehicle-plate" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category prototypes">Prototype</span>
+                        <h3 class="project-title">Vehicle Number Plate Detection</h3>
+                        <p class="project-desc">Computer vision-based system for automatic vehicle number plate recognition and logging using image processing.</p>
+                        <div class="project-gallery-thumbs" data-project="vehicle-plate">
+                            <img src="images/prototypes/vehicle-plate/IMG_1178.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/prototypes/vehicle-plate/IMG_1177.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                            <img src="images/prototypes/vehicle-plate/IMG_1168.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="prototypes">
+                    <div class="project-image">
+                        <img src="images/prototypes/forest-security/IMG_1477.jpg" alt="Forest Security" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" data-project="forest-security" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category prototypes">Prototype</span>
+                        <h3 class="project-title">Forest Poaching & Security System</h3>
+                        <p class="project-desc">IoT-based forest protection system with motion detection, alerts, and surveillance to prevent poaching activities.</p>
+                        <div class="project-gallery-thumbs" data-project="forest-security">
+                            <img src="images/prototypes/forest-security/IMG_1477.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/prototypes/forest-security/IMG_1476.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                            <img src="images/prototypes/forest-security/IMG_1480.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
+                            <img src="images/prototypes/forest-security/IMG_1481.jpg" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="prototypes">
+                    <div class="project-image">
+                        <img src="images/prototypes/cable-fault/IMG_1499.jpg" alt="Cable Fault Detection" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" data-project="cable-fault" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category prototypes">Prototype</span>
+                        <h3 class="project-title">Cable Fault Detection System</h3>
+                        <p class="project-desc">Automated system for detecting and locating faults in electrical cables using time-domain reflectometry.</p>
+                        <div class="project-gallery-thumbs" data-project="cable-fault">
+                            <img src="images/prototypes/cable-fault/IMG_1499.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/prototypes/cable-fault/IMG_1496.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                            <img src="images/prototypes/cable-fault/IMG_1494.png" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
+                            <img src="images/prototypes/cable-fault/IMG_1492.png" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="prototypes">
+                    <div class="project-image">
+                        <img src="images/prototypes/medical-drip/IMG_0844.jpg" alt="Medical Drip Indicator" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" data-project="medical-drip" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category prototypes">Prototype</span>
+                        <h3 class="project-title">Medical Drip Bottle Level Indicator</h3>
+                        <p class="project-desc">Smart medical device that monitors IV drip bottle levels and alerts nurses when replacement is needed.</p>
+                        <div class="project-gallery-thumbs" data-project="medical-drip">
+                            <img src="images/prototypes/medical-drip/IMG_0844.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/prototypes/medical-drip/IMG_0843.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                            <img src="images/prototypes/medical-drip/IMG_0845.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
+                            <img src="images/prototypes/medical-drip/IMG_0851.jpg" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="prototypes">
+                    <div class="project-image">
+                        <img src="images/prototypes/silk-worm/IMG_1501.jpg" alt="Silk Worm Detection" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" data-project="silk-worm" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category prototypes">Prototype</span>
+                        <h3 class="project-title">Silk Worm Disease Detection</h3>
+                        <p class="project-desc">ML-based system for early detection of diseases in silkworms to improve silk production quality and yield.</p>
+                        <div class="project-gallery-thumbs" data-project="silk-worm">
+                            <img src="images/prototypes/silk-worm/IMG_1501.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/prototypes/silk-worm/IMG_1500.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">Have a project idea or want to collaborate?</p>
+            <div class="contact-content">
+                <div class="contact-links">
+                    <a href="mailto:your.email@example.com" class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email Me</span>
+                    </a>
+                    <a href="https://github.com/Deepakr011" target="_blank" class="contact-card">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/your-profile" target="_blank" class="contact-card">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Deepak R. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <button class="lightbox-prev" id="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next" id="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-img">
+        </div>
+        <div class="lightbox-counter" id="lightbox-counter">1 / 5</div>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

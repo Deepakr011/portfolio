@@ -1,0 +1,18 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Source folders (only the optimized web images go live)
+/Agriculture/
+/innovation/
+/Products/
+/Prototypes/
+
+# Conversion/verification scripts (not needed on the site)
+convert-heic.ps1
+convert-images.py
+verify-images.py
+
+# Editor
+.vscode/
+.idea/
