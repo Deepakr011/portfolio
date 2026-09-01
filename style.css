@@ -405,6 +405,10 @@ a {
     transition: transform 0.5s ease;
 }
 
+.project-image img.img-contain {
+    object-fit: contain;
+}
+
 .project-card:hover .project-image img {
     transform: scale(1.08);
 }
