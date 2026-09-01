@@ -11,7 +11,9 @@ Thumbs.db
 # Conversion/verification scripts (not needed on the site)
 convert-heic.ps1
 convert-images.py
+convert-videos.py
 verify-images.py
+check-refs.py
 
 # Editor
 .vscode/
