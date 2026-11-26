@@ -1,110 +1,3 @@
-// ==================== NAVBAR ====================
-const navbar = document.getElementById('navbar');
-const navToggle = document.getElementById('nav-toggle');
-const navMenu = document.getElementById('nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
-
-window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-});
-
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    const icon = navToggle.querySelector('i');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-times');
-});
-
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        const icon = navToggle.querySelector('i');
-        icon.classList.add('fa-bars');
-        icon.classList.remove('fa-times');
-    });
-});
-
-// Active nav link on scroll
-const sections = document.querySelectorAll('.section, .hero');
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (scrollY >= sectionTop) {
-            current = section.getAttribute('id');
-        }
-    });
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// ==================== COUNTER ANIMATION ====================
-const statNumbers = document.querySelectorAll('.stat-number');
-let countersStarted = false;
-
-function animateCounters() {
-    statNumbers.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-count'));
-        const duration = 2000;
-        const start = 0;
-        const increment = target / (duration / 16);
-        let current = start;
-
-        const updateCounter = () => {
-            current += increment;
-            if (current < target) {
-                stat.textContent = Math.ceil(current) + '+';
-                requestAnimationFrame(updateCounter);
-            } else {
-                stat.textContent = target + '+';
-            }
-        };
-        updateCounter();
-    });
-}
-
-const heroObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !countersStarted) {
-            countersStarted = true;
-            animateCounters();
-        }
-    });
-}, { threshold: 0.5 });
-
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) heroObserver.observe(heroStats);
-
-// ==================== FILTER TABS ====================
-const filterBtns = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
-
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.getAttribute('data-filter');
-
-        projectCards.forEach((card, index) => {
-            const category = card.getAttribute('data-category');
-            if (filter === 'all' || category === filter) {
-                card.classList.remove('hidden');
-                card.style.animation = 'none';
-                card.offsetHeight;
-                card.style.animation = `fadeInUp 0.5s ease ${index * 0.05}s forwards`;
-            } else {
-                card.classList.add('hidden');
-            }
-        });
-    });
-});
-
-// ==================== THUMBNAIL GALLERY ====================
 const projectImages = {
     'agriculture': [
         'images/agriculture/IMG_2433.jpg',
@@ -219,192 +112,104 @@ const projectImages = {
         'images/prototypes/medical-drip/IMG_0843.jpg',
         'images/prototypes/medical-drip/IMG_0845.jpg',
         'images/prototypes/medical-drip/IMG_0851.jpg'
-    ],
-    'silk-worm': [
-        'images/prototypes/silk-worm/IMG_1501.jpg',
-        'images/prototypes/silk-worm/IMG_1500.jpg'
     ]
 };
 
-// Thumbnail click - update main image
-document.querySelectorAll('.thumb').forEach(thumb => {
-    thumb.addEventListener('click', () => {
-        const thumbsContainer = thumb.closest('.project-gallery-thumbs');
-        const project = thumbsContainer.getAttribute('data-project');
-        const index = parseInt(thumb.getAttribute('data-index'));
-        const card = thumb.closest('.project-card');
-        const mainImg = card.querySelector('.project-image img');
+const filterGroup = document.querySelector('.filter-tabs');
+const filters = filterGroup.querySelectorAll('button');
+const projects = document.querySelectorAll('#projects .project-card');
+const filterStatus = document.getElementById('filter-status');
 
-        thumbsContainer.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
+filterGroup.hidden = false;
+filterGroup.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-filter]');
+    if (!button) return;
 
-        const images = projectImages[project];
-        if (images && images[index]) {
-            mainImg.src = images[index];
-        }
+    filters.forEach((filter) => {
+        filter.setAttribute('aria-pressed', String(filter === button));
+    });
+
+    let count = 0;
+    projects.forEach((project) => {
+        const matches = button.dataset.filter === 'all' || project.dataset.category === button.dataset.filter;
+        project.hidden = !matches;
+        if (matches) count++;
+    });
+    filterStatus.textContent = count + ' projects shown';
+});
+
+const gallery = document.getElementById('lightbox');
+const galleryImage = document.getElementById('lightbox-img');
+const galleryCounter = document.getElementById('lightbox-counter');
+const videoDialog = document.getElementById('video-modal');
+const video = document.getElementById('video-player');
+let images = [];
+let imageIndex = 0;
+let imageDescription = '';
+
+function showImage(index) {
+    imageIndex = (index + images.length) % images.length;
+    galleryImage.src = images[imageIndex];
+    galleryImage.alt = imageDescription + ', image ' + (imageIndex + 1);
+    galleryCounter.textContent = (imageIndex + 1) + ' / ' + images.length;
+}
+
+document.querySelectorAll('.project-card').forEach((card) => {
+    const mainImage = card.querySelector('.project-image img');
+    const galleryButton = card.querySelector('.gallery-btn');
+    const thumbs = card.querySelectorAll('.thumb');
+    if (!mainImage || !galleryButton) return;
+
+    const project = galleryButton.dataset.project;
+    thumbs.forEach((thumb) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'thumb-button';
+        button.setAttribute('aria-label', 'Show image ' + (Number(thumb.dataset.index) + 1));
+        button.setAttribute('aria-pressed', String(thumb.classList.contains('active')));
+        thumb.replaceWith(button);
+        button.append(thumb);
+
+        button.addEventListener('click', () => {
+            const index = Number(thumb.dataset.index);
+            const src = projectImages[project]?.[index];
+            if (!src) return;
+            mainImage.src = src;
+            galleryButton.dataset.index = index;
+            thumbs.forEach((item) => {
+                item.parentElement.setAttribute('aria-pressed', String(item === thumb));
+            });
+        });
+    });
+
+    galleryButton.addEventListener('click', () => {
+        images = projectImages[project];
+        if (!images?.length) return;
+        imageDescription = mainImage.alt;
+        showImage(Number(galleryButton.dataset.index));
+        gallery.showModal();
     });
 });
 
-// ==================== LIGHTBOX ====================
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const lightboxClose = document.getElementById('lightbox-close');
-const lightboxPrev = document.getElementById('lightbox-prev');
-const lightboxNext = document.getElementById('lightbox-next');
-const lightboxCounter = document.getElementById('lightbox-counter');
+document.getElementById('lightbox-close').addEventListener('click', () => gallery.close());
+document.getElementById('lightbox-prev').addEventListener('click', () => showImage(imageIndex - 1));
+document.getElementById('lightbox-next').addEventListener('click', () => showImage(imageIndex + 1));
+gallery.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') showImage(imageIndex - 1);
+    if (event.key === 'ArrowRight') showImage(imageIndex + 1);
+});
 
-let currentProject = '';
-let currentIndex = 0;
-
-function openLightbox(project, index) {
-    currentProject = project;
-    currentIndex = index;
-    const images = projectImages[project];
-    if (images && images[index]) {
-        lightboxImg.src = images[index];
-        lightboxCounter.textContent = `${index + 1} / ${images.length}`;
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function closeLightbox() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-function navigateLightbox(direction) {
-    const images = projectImages[currentProject];
-    if (!images) return;
-
-    currentIndex = (currentIndex + direction + images.length) % images.length;
-    lightboxImg.src = images[currentIndex];
-    lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
-}
-
-document.querySelectorAll('.gallery-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const project = btn.getAttribute('data-project');
-        const index = parseInt(btn.getAttribute('data-index'));
-        openLightbox(project, index);
+document.querySelectorAll('.video-link').forEach((link) => {
+    link.addEventListener('click', (event) => {
+        if (typeof videoDialog.showModal !== 'function') return;
+        event.preventDefault();
+        video.src = link.dataset.src;
+        videoDialog.showModal();
     });
 });
-
-lightboxClose.addEventListener('click', closeLightbox);
-lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
-lightboxNext.addEventListener('click', () => navigateLightbox(1));
-
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
+document.getElementById('video-modal-close').addEventListener('click', () => videoDialog.close());
+videoDialog.addEventListener('close', () => {
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
 });
-
-document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('active')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') navigateLightbox(-1);
-    if (e.key === 'ArrowRight') navigateLightbox(1);
-});
-
-// ==================== VIDEO MODAL ====================
-const videoModal = document.getElementById('video-modal');
-const videoPlayer = document.getElementById('video-player');
-const videoModalClose = document.getElementById('video-modal-close');
-
-function openVideo(src) {
-    if (!videoModal || !videoPlayer) return;
-    videoPlayer.src = src;
-    videoModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeVideoModal() {
-    if (!videoModal) return;
-    videoPlayer.pause();
-    videoPlayer.removeAttribute('src');
-    videoPlayer.load();
-    videoModal.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-document.querySelectorAll('.video-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        openVideo(link.getAttribute('data-src'));
-    });
-});
-
-if (videoModalClose) {
-    videoModalClose.addEventListener('click', closeVideoModal);
-}
-
-if (videoModal) {
-    videoModal.addEventListener('click', (e) => {
-        if (e.target === videoModal) closeVideoModal();
-    });
-}
-
-document.addEventListener('keydown', (e) => {
-    if (videoModal && videoModal.classList.contains('active') && e.key === 'Escape') {
-        closeVideoModal();
-    }
-});
-
-// ==================== BACK TO TOP ====================
-const backToTop = document.getElementById('back-to-top');
-
-window.addEventListener('scroll', () => {
-    backToTop.classList.toggle('visible', window.scrollY > 500);
-});
-
-backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// ==================== SCROLL REVEAL ====================
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
-
-projectCards.forEach(card => scrollObserver.observe(card));
-
-// ==================== PARTICLES ====================
-function createParticles() {
-    const container = document.getElementById('particles');
-    if (!container) return;
-
-    for (let i = 0; i < 30; i++) {
-        const particle = document.createElement('div');
-        particle.style.cssText = `
-            position: absolute;
-            width: ${Math.random() * 4 + 1}px;
-            height: ${Math.random() * 4 + 1}px;
-            background: rgba(108, 92, 231, ${Math.random() * 0.3 + 0.1});
-            border-radius: 50%;
-            left: ${Math.random() * 100}%;
-            top: ${Math.random() * 100}%;
-            animation: float ${Math.random() * 6 + 4}s ease-in-out infinite;
-            animation-delay: ${Math.random() * 4}s;
-        `;
-        container.appendChild(particle);
-    }
-
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes float {
-            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.5; }
-            50% { transform: translateY(-20px) translateX(10px); opacity: 1; }
-        }
-    `;
-    document.head.appendChild(style);
-}
-
-createParticles();
