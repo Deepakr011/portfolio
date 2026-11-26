@@ -32,19 +32,19 @@
         <div class="hero-content">
             <p class="hero-greeting">Hello, I'm</p>
             <h1 class="hero-name">Deepak R</h1>
-            <p class="hero-role">Innovator &bull; Engineer &bull; Creator</p>
-            <p class="hero-desc">Building innovative solutions from agriculture to AI-powered products. Turning ideas into reality through engineering and technology.</p>
+            <p class="hero-role">Embedded Systems &bull; IoT &bull; Applied AI</p>
+            <p class="hero-desc">I build sensor-based systems, farm automation tools, and AI applications, from embedded firmware to the interfaces people use.</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
                 <a href="#contact" class="btn btn-outline">Get in Touch</a>
             </div>
             <div class="hero-stats">
                 <div class="stat">
-                    <span class="stat-number" data-count="16">0</span>
+                    <span class="stat-number" data-count="29">0</span>
                     <span class="stat-label">Projects</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number" data-count="4">0</span>
+                    <span class="stat-number" data-count="5">0</span>
                     <span class="stat-label">Categories</span>
                 </div>
                 <div class="stat">
@@ -64,17 +64,20 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I am a passionate engineer and innovator with expertise spanning multiple domains including agriculture technology, AI/ML, IoT systems, and hardware prototyping. My work focuses on creating practical, impactful solutions that bridge the gap between technology and real-world problems.</p>
-                    <p>From building AI-powered teacher robots to developing hydroponic systems, from forest security systems to medical devices — each project represents a step toward making technology accessible and useful for everyone.</p>
+                    <p>I'm an agricultural engineering graduate from Alva’s Institute of Engineering and Technology (2025). I build embedded systems that connect sensors, controllers, and applications, with a focus on farm automation and monitoring.</p>
+                    <p>My experience includes greenhouse automation and IoT firmware at Anmaya Technologies, R&amp;D at Escorts Kubota ETDC, and farm auditing at NisargaWoods Hebbevu Farms.</p>
+                    <h3>Technical skills</h3>
                     <div class="skills">
-                        <span class="skill-tag">IoT</span>
-                        <span class="skill-tag">AI/ML</span>
-                        <span class="skill-tag">Hardware Design</span>
-                        <span class="skill-tag">Agriculture Tech</span>
-                        <span class="skill-tag">Robotics</span>
-                        <span class="skill-tag">Sensors</span>
-                        <span class="skill-tag">Embedded Systems</span>
-                        <span class="skill-tag">Prototyping</span>
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">ESP32 &amp; STM32</span>
+                        <span class="skill-tag">RP2040 &amp; Raspberry Pi</span>
+                        <span class="skill-tag">LoRa &amp; MQTT</span>
+                        <span class="skill-tag">LVGL</span>
+                        <span class="skill-tag">KiCad</span>
+                        <span class="skill-tag">TensorFlow Lite &amp; OpenCV</span>
+                        <span class="skill-tag">FastAPI &amp; MongoDB</span>
+                        <span class="skill-tag">Docker &amp; Linux</span>
                     </div>
                 </div>
             </div>
@@ -85,7 +88,7 @@
     <section class="section projects" id="projects">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
-            <p class="section-subtitle">Explore my work across different domains</p>
+
 
             <!-- Filter Tabs -->
             <div class="filter-tabs">
@@ -99,6 +102,9 @@
                 <button class="filter-btn" data-filter="products">
                     <i class="fas fa-cube"></i> Products
                 </button>
+                <button class="filter-btn" data-filter="software">
+                    <i class="fas fa-code"></i> Software &amp; AI
+                </button>
                 <button class="filter-btn" data-filter="prototypes">
                     <i class="fas fa-cogs"></i> Prototypes
                 </button>
@@ -106,6 +112,103 @@
 
             <!-- Projects Grid -->
             <div class="projects-grid" id="projects-grid">
+
+                <div class="project-card" data-category="agriculture">
+                    <div class="project-info">
+                        <span class="project-category agriculture">Agriculture</span>
+                        <h3 class="project-title">LoRa Water Tank Monitoring</h3>
+                        <p class="project-desc">A working prototype that polls ultrasonic water-level sensors over LoRa using RP2040 boards and SX1262 radios. The radio link was tested at about 2 km outdoors.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="agriculture">
+                    <div class="project-info">
+                        <span class="project-category agriculture">Agriculture</span>
+                        <h3 class="project-title">Solar Irrigation Controller</h3>
+                        <p class="project-desc">An ESP32 relay controller that sequences a borewell pump and three irrigation valves. The design uses solar-backed controls, saves configuration in flash, and opens the next valve before closing the previous one to reduce pressure spikes.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="software">
+                    <div class="project-info">
+                        <span class="project-category software">Software &amp; AI</span>
+                        <h3 class="project-title">PrepUp Interview Platform</h3>
+                        <p class="project-desc">An interview practice platform with résumé scoring, adaptive questions, and audio and video evaluation. The backend uses FastAPI, MongoDB, FFmpeg, and the Gemini API.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="agriculture">
+                    <div class="project-info">
+                        <span class="project-category agriculture">Agriculture</span>
+                        <h3 class="project-title">AgriBot Crop Monitoring Rover</h3>
+                        <p class="project-desc">An ESP32 rover prototype with motor control, an LCD, and MQTT telemetry for a crop-monitoring and spray-control node.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="agriculture">
+                    <div class="project-info">
+                        <span class="project-category agriculture">Agriculture</span>
+                        <h3 class="project-title">Raspberry Pi Crop Disease Detection</h3>
+                        <p class="project-desc">A crop image classification project using TensorFlow Lite for inference on a Raspberry Pi.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="prototypes">
+                    <div class="project-info">
+                        <span class="project-category prototypes">Prototype</span>
+                        <h3 class="project-title">Ultrasonic-Triggered Robotic Hand</h3>
+                        <p class="project-desc">An ESP32 prototype that uses ultrasonic distance sensing to trigger a stepper motor and servo.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="prototypes">
+                    <div class="project-info">
+                        <span class="project-category prototypes">Prototype</span>
+                        <h3 class="project-title">Morse Code Communicator</h3>
+                        <p class="project-desc">An embedded communicator that reads Morse input and plays back letters and phrases. A Python script generates the audio assets stored in LittleFS.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="software">
+                    <div class="project-info">
+                        <span class="project-category software">Software &amp; AI</span>
+                        <h3 class="project-title">Grocery Voice Assistant</h3>
+                        <p class="project-desc">A Python voice interface for grocery requests that uses Whisper to transcribe speech, with a focus on Indian accents.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="software">
+                    <div class="project-info">
+                        <span class="project-category software">Software &amp; AI</span>
+                        <h3 class="project-title">Document Question Answering</h3>
+                        <p class="project-desc">A retrieval-augmented generation project that uses LlamaIndex and Qdrant to retrieve document passages for question answering.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="software">
+                    <div class="project-info">
+                        <span class="project-category software">Software &amp; AI</span>
+                        <h3 class="project-title">Arecanut Market Price Analysis</h3>
+                        <p class="project-desc">A Python and pandas project exploring price trends in arecanut market data.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="software">
+                    <div class="project-info">
+                        <span class="project-category software">Software &amp; AI</span>
+                        <h3 class="project-title">Cloud Backend Deployments</h3>
+                        <p class="project-desc">Deployment and troubleshooting of Dockerized backend services and MQTT connections on Ubuntu virtual machines in Azure.</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="prototypes">
+                    <div class="project-info">
+                        <span class="project-category prototypes">Prototype</span>
+                        <h3 class="project-title">Kati Basti Thermal Therapy Ring</h3>
+                        <p class="project-desc">A temperature-controlled hardware prototype combining an ESP32-C3, infrared temperature sensing, a flexible heating pad, and an OLED display.</p>
+                    </div>
+                </div>
+
 
                 <!-- Recent Project -->
                 <div class="project-card" data-category="products">
@@ -196,7 +299,7 @@
                     <div class="project-info">
                         <span class="project-category products">Product</span>
                         <h3 class="project-title">Christy AI Teacher Robot</h3>
-                        <p class="project-desc">An AI-powered educational robot designed to assist teachers and engage students with interactive learning experiences.</p>
+                        <p class="project-desc">A conversational teaching assistant built for Christ King Institution. LiveKit Agents connects Deepgram speech recognition, OpenAI responses, and Cartesia speech synthesis for real-time voice interaction.</p>
                         <div class="project-gallery-thumbs" data-project="christy-ai">
                             <img src="images/products/christy-ai/IMG_2322.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
                             <img src="images/products/christy-ai/IMG_2271.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
@@ -254,7 +357,7 @@
                     <div class="project-info">
                         <span class="project-category products">Product</span>
                         <h3 class="project-title">NIR Spectral Soil Analysis</h3>
-                        <p class="project-desc">Near-infrared spectral analysis system for real-time soil composition and nutrient assessment for precision farming.</p>
+                        <p class="project-desc">A Python pipeline that collects soil spectra from a NeoSpectra Puck spectrometer and applies partial least squares regression to estimate soil nitrogen and moisture.</p>
                         <div class="project-gallery-thumbs" data-project="nir-soil">
                             <img src="images/products/nir-soil/IMG_2345.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
                             <img src="images/products/nir-soil/IMG_2354.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
