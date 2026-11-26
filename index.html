@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Deepak R’s engineering portfolio covering embedded firmware, hardware validation, and applied research.">
-    <title>Deepak R | Embedded Systems & Firmware</title>
+    <title>Deepak R | Embedded Systems Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,9 +18,9 @@
         <div class="wrap header-inner">
             <a class="brand" href="#main">Deepak R<span>.</span></a>
             <nav aria-label="Primary navigation">
-                <a href="#work">Selected work</a>
-                <a href="#projects">Projects</a>
+                <a href="#work">Products</a>
                 <a href="#about">About</a>
+                <a href="#projects">Prototypes</a>
             </nav>
             <a class="header-github" href="https://github.com/Deepakr011"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
         </div>
@@ -29,39 +29,19 @@
         <section class="hero wrap" aria-labelledby="hero-title">
             <div class="hero-copy">
                 <p class="eyebrow">DEEPAK R / ENGINEERING PORTFOLIO</p>
-                <h1 id="hero-title">Embedded systems<br><em>&amp; firmware</em></h1>
-                <p class="intro">I develop firmware, bring up sensors and interfaces, and prototype systems for agricultural automation and applied research.</p>
+                <h1 id="hero-title">Embedded systems<br><em>engineer</em></h1>
+                <p class="intro">I develop embedded firmware and integrate sensors, communication interfaces, and control hardware for products and prototypes.</p>
                 <div class="hero-actions">
-                    <a class="button primary" href="#work">Explore selected work</a>
+                    <a class="button primary" href="#work">Explore products</a>
                     <a class="button secondary" href="https://github.com/Deepakr011">Browse GitHub</a>
                 </div>
             </div>
-            <figure class="hero-photo">
-                <img src="images/recent%20project.jpeg" alt="Deepak’s IoT and electronics training panel" width="1600" height="900" fetchpriority="high">
-                <figcaption>ESP32-S3 training panel <span>LVGL · RS485</span></figcaption>
-            </figure>
         </section>
-        <section class="band" aria-label="Engineering focus areas">
-            <div class="wrap focus">
-                <div><strong>Embedded systems</strong><span>ESP32 · RP2040 · STM32</span></div>
-                <div><strong>Firmware engineering</strong><span>C/C++ · FreeRTOS · Peripheral validation</span></div>
-                <div><strong>Applied research</strong><span>Instrumentation · Spectroscopy · Edge vision</span></div>
-            </div>
-        </section>
-        <section class="wrap section" id="work" aria-labelledby="work-title">
+        <section class="wrap section products" id="work" aria-labelledby="work-title">
             <div class="section-heading">
-                <h2 id="work-title">Selected engineering work</h2>
-                <p>Firmware, bench tests, field prototypes, and instrumentation.</p>
+                <h2 id="work-title">Products</h2>
             </div>
-            <div class="projects-grid featured">
-                <article class="project-card" data-category="firmware">
-                    <div class="project-info">
-                        <h3 class="project-title">AIOTA Peripheral Bring-up &amp; Validation</h3>
-                        <p class="project-desc">Wrote standalone ESP-IDF C tests for peripheral bring-up. The suite includes dual MCP2515 CAN loopback, UART, I²C and SPI loopbacks, an MCP4725 DAC-to-ESP32 ADC check, and W5500 Ethernet, LoRa and SD card demos.</p>
-                        <p class="stack">Embedded C · Bus loopback · Mixed-signal testing</p>
-                        <a class="source" href="https://github.com/Deepakr011/AIOTA_Sensor_testing_code">View source</a>
-                    </div>
-                </article>
+            <div class="projects-grid">
                 <div class="project-card" data-category="firmware">
                     <div class="project-image">
                         <img src="images/recent project.jpeg" alt="IoT & Electronics Training Panel" class="img-contain" loading="lazy" onerror="this.src='images/placeholder.svg'">
@@ -82,15 +62,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-category="firmware">
-                    <div class="project-info">
-
-                        <h3 class="project-title">Solar Irrigation Controller</h3>
-                        <p class="project-desc">Implemented a three-zone irrigation scheduler as an ESP32 state machine. The public firmware waits for grid power, checks valve current, sequences pump and valve relays, saves remaining run time in Preferences, and sends status over LoRa.</p>
-                        <p class="stack">ESP32 · C++ · NVS · INA226 · LoRa</p>
-                        <a class="source" href="https://github.com/Deepakr011/irrigation_controller/blob/main/irrigation_shedular.ino">View source</a>
-                    </div>
-                </div>
                 <div class="project-card" data-category="research">
                     <div class="project-image">
                         <img src="images/products/nir-soil/IMG_2345.jpg" alt="NIR Soil Analysis" loading="lazy" onerror="this.src='images/placeholder.svg'">
@@ -102,7 +73,7 @@
                     </div>
                     <div class="project-info">
 
-                        <h3 class="project-title">NIR Spectral Soil Analysis</h3>
+                        <h3 class="project-title">NIR Soil Analyzer</h3>
                         <p class="project-desc">Developed a Python workflow to acquire soil spectra from a NeoSpectra Puck and apply partial least squares regression to estimate nitrogen and moisture. The project gallery shows the instrumentation and setup.</p>
                         <p class="stack">Si-NIR spectroscopy · Python · PLS regression</p>
                         <div class="project-gallery-thumbs" data-project="nir-soil">
@@ -120,72 +91,82 @@
                     </div>
                 </div>
                 <div class="project-card" data-category="firmware">
-                    <div class="project-info">
-
-                        <h3 class="project-title">LoRa Water Tank Monitoring</h3>
-                        <p class="project-desc">Prototyped a tank monitoring network using RP2040/SX1262 boards and ultrasonic level sensing. A coordinator polls individual nodes for level data. Outdoor point-to-point testing reached about 2 km.</p>
-                        <p class="stack">RP2040 · SX1262 · Ultrasonic sensing · Node polling</p>
-                    </div>
-                </div>
-                <article class="project-card" data-category="research">
-                    <div class="project-info">
-                        <h3 class="project-title">Arecanut Detection &amp; Servo Tracking</h3>
-                        <p class="project-desc">Used YOLO and OpenCV to identify arecanuts in camera frames and map target coordinates to pan and tilt angles. The script sends angle commands over serial to the actuator controller.</p>
-                        <p class="stack">Python · YOLO · OpenCV · Servo control</p>
-                        <a class="source" href="https://github.com/Deepakr011/Python-Areca/blob/main/ARECAdetection.py">View source</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <section class="archive" id="projects" aria-labelledby="projects-title">
-            <div class="wrap section">
-                <div class="section-heading">
-                    <h2 id="projects-title">More projects</h2>
-                    <div class="filter-tabs" role="group" aria-label="Filter additional projects" hidden>
-                        <button type="button" data-filter="all" aria-pressed="true">All</button>
-                        <button type="button" data-filter="firmware" aria-pressed="false">Embedded &amp; firmware</button>
-                        <button type="button" data-filter="research" aria-pressed="false">Applied research</button>
-                        <button type="button" data-filter="software" aria-pressed="false">Software &amp; AI</button>
-                    </div>
-                    <p class="sr-only" id="filter-status" role="status"></p>
-                </div>
-                <div class="projects-grid">
-                <article class="project-card" data-category="firmware">
-                    <div class="project-info">
-                        <h3 class="project-title">Connected Valve Controller</h3>
-                        <p class="project-desc">Prototyped a connected valve-control system with a MicroPython device script and Flutter app in the same repository. A separate MicroPython scheduler implements timed valve control and local state persistence.</p>
-                        <p class="stack">MicroPython · ESP32 · Flutter</p>
-                        <a class="source" href="https://github.com/Deepakr011/smart-valve-controller-app">View source</a>
-                        <a class="source related-source" href="https://github.com/Deepakr011/valve_sheduler/blob/main/esp32_working_good.py">Scheduler source</a>
-                    </div>
-                </article>
-                <div class="project-card" data-category="firmware">
                     <div class="project-image">
-                        <img src="images/products/aiota-iot/IMG_1730.jpg" alt="AIOTA IOT Training Panel" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <img src="images/products/hydroponic/IMG_0023.jpg" alt="Hydroponic Project" loading="lazy" onerror="this.src='images/placeholder.svg'">
                         <div class="project-overlay">
-                            <button class="gallery-btn" aria-label="Open project gallery" data-project="aiota-iot" data-index="0">
+                            <button class="gallery-btn" aria-label="Open project gallery" data-project="hydroponic" data-index="0">
                                 <i class="fas fa-expand"></i>
                             </button>
                         </div>
                     </div>
                     <div class="project-info">
 
-                        <h3 class="project-title">AIOTA IOT Training Panel</h3>
-                        <p class="project-desc">Hands-on IoT training panel for education, covering embedded systems, sensors, and connectivity for practical learning.</p>
-                        <div class="project-gallery-thumbs" data-project="aiota-iot">
-                            <img src="images/products/aiota-iot/IMG_1730.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
-                            <img src="images/products/aiota-iot/IMG_1732.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
-                            <img src="images/products/aiota-iot/IMG_1735.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
-                            <img src="images/products/aiota-iot/IMG_1739.jpg" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
-                            <img src="images/products/aiota-iot/IMG_1764.jpg" alt="" class="thumb" data-index="4" onerror="this.style.display='none'">
+                        <h3 class="project-title">Vithnet Hydroponic System</h3>
+                        <p class="project-desc">Smart hydroponic farming system with automated nutrient delivery, pH monitoring, and environmental control.</p>
+                        <div class="project-gallery-thumbs" data-project="hydroponic">
+                            <img src="images/products/hydroponic/IMG_0023.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
                         </div>
-                        <div class="project-videos" data-project="aiota-iot">
-                            <a href="videos/products/aiota-iot/IMG_1540.mp4" class="video-link" data-src="videos/products/aiota-iot/IMG_1540.mp4">
+                        <div class="project-videos" data-project="hydroponic">
+                            <a href="videos/products/hydroponic/IMG_0028.mp4" class="video-link" data-src="videos/products/hydroponic/IMG_0028.mp4">
                                 <i class="fas fa-play"></i> Watch Demo
                             </a>
-                            <a href="videos/products/aiota-iot/IMG_1741.mp4" class="video-link" data-src="videos/products/aiota-iot/IMG_1741.mp4">
+                            <a href="videos/products/hydroponic/IMG_1519.mp4" class="video-link" data-src="videos/products/hydroponic/IMG_1519.mp4">
                                 <i class="fas fa-play"></i> Watch Demo 2
                             </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="firmware">
+                    <div class="project-image">
+                        <img src="images/products/jnnc-hydroponic/IMG_1279.jpg" alt="JNNC Hydroponic" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" aria-label="Open project gallery" data-project="jnnc-hydroponic" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+
+                        <h3 class="project-title">JNNC Hydroponic Controller</h3>
+                        <p class="project-desc">Automated hydroponic controller system for monitoring and managing water quality, temperature, and nutrient levels.</p>
+                        <div class="project-gallery-thumbs" data-project="jnnc-hydroponic">
+                            <img src="images/products/jnnc-hydroponic/IMG_1279.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/products/jnnc-hydroponic/IMG_1276.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                            <img src="images/products/jnnc-hydroponic/IMG_1191.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
+                            <img src="images/products/jnnc-hydroponic/IMG_1228.jpg" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
+                        </div>
+                        <div class="project-videos" data-project="jnnc-hydroponic">
+                            <a href="videos/products/jnnc-hydroponic/IMG_1219.mp4" class="video-link" data-src="videos/products/jnnc-hydroponic/IMG_1219.mp4">
+                                <i class="fas fa-play"></i> Watch Demo
+                            </a>
+                            <a href="videos/products/jnnc-hydroponic/IMG_1243.mp4" class="video-link" data-src="videos/products/jnnc-hydroponic/IMG_1243.mp4">
+                                <i class="fas fa-play"></i> Watch Demo 2
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="software">
+                    <div class="project-image">
+                        <img src="images/products/christy-ai/IMG_2322.jpg" alt="Christy AI Robot" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <div class="project-overlay">
+                            <button class="gallery-btn" aria-label="Open project gallery" data-project="christy-ai" data-index="0">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+
+                        <h3 class="project-title">Christy AI Teacher Robot</h3>
+                        <p class="project-desc">Built a real-time voice assistant using a LiveKit agent to coordinate speech recognition, model responses, and speech synthesis.</p>
+                        <p class="stack">Python · LiveKit · Deepgram · Cartesia</p>
+                        <a class="source" href="https://github.com/Deepakr011/Christy/blob/main/src/agent.py">View source</a>
+                        <div class="project-gallery-thumbs" data-project="christy-ai">
+                            <img src="images/products/christy-ai/IMG_2322.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/products/christy-ai/IMG_2271.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                            <img src="images/products/christy-ai/IMG_2224.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
+                            <img src="images/products/christy-ai/IMG_2219.jpg" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
+                            <img src="images/products/christy-ai/IMG_2218.jpg" alt="" class="thumb" data-index="4" onerror="this.style.display='none'">
+                            <img src="images/products/christy-ai/B7ACEF3C-C9D5-46B1-8D0E-884588A011C7.jpg" alt="" class="thumb" data-index="5" onerror="this.style.display='none'">
                         </div>
                     </div>
                 </div>
@@ -224,75 +205,88 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-category="firmware">
+                <div class="project-card" data-category="research">
                     <div class="project-image">
-                        <img src="images/products/jnnc-hydroponic/IMG_1279.jpg" alt="JNNC Hydroponic" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <img src="images/products/ayurvedic/07462d84-5c67-4916-afb8-1d735f685ebf.jpg" alt="Ayurvedic Nadi Pariksha" loading="lazy" onerror="this.src='images/placeholder.svg'">
                         <div class="project-overlay">
-                            <button class="gallery-btn" aria-label="Open project gallery" data-project="jnnc-hydroponic" data-index="0">
+                            <button class="gallery-btn" aria-label="Open project gallery" data-project="ayurvedic" data-index="0">
                                 <i class="fas fa-expand"></i>
                             </button>
                         </div>
                     </div>
                     <div class="project-info">
 
-                        <h3 class="project-title">JNNC Hydroponic Controller</h3>
-                        <p class="project-desc">Automated hydroponic controller system for monitoring and managing water quality, temperature, and nutrient levels.</p>
-                        <div class="project-gallery-thumbs" data-project="jnnc-hydroponic">
-                            <img src="images/products/jnnc-hydroponic/IMG_1279.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
-                            <img src="images/products/jnnc-hydroponic/IMG_1276.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
-                            <img src="images/products/jnnc-hydroponic/IMG_1191.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
-                            <img src="images/products/jnnc-hydroponic/IMG_1228.jpg" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
+                        <h3 class="project-title">Ayurvedic Nadi Pariksha Device</h3>
+                        <p class="project-desc">A diagnostic device that uses sensor technology to perform traditional Ayurvedic pulse diagnosis (Nadi Pariksha) digitally.</p>
+                        <div class="project-gallery-thumbs" data-project="ayurvedic">
+                            <img src="images/products/ayurvedic/07462d84-5c67-4916-afb8-1d735f685ebf.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/products/ayurvedic/36E498A6-B053-469D-A266-6E15897FCF07.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                            <img src="images/products/ayurvedic/IMG_2385.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
+                            <img src="images/products/ayurvedic/IMG_2388.jpg" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
+                            <img src="images/products/ayurvedic/0A4E623B-61DE-446B-B946-6E0C2550202E.jpg" alt="" class="thumb" data-index="4" onerror="this.style.display='none'">
+                            <img src="images/products/ayurvedic/9aa29d40-de13-463e-b1ee-2a851f0b7e68.jpg" alt="" class="thumb" data-index="5" onerror="this.style.display='none'">
+                            <img src="images/products/ayurvedic/8BD70BD9-9731-49EE-A45C-8CBB4AC82CBB.jpg" alt="" class="thumb" data-index="6" onerror="this.style.display='none'">
+                            <img src="images/products/ayurvedic/IMG_2337.jpg" alt="" class="thumb" data-index="7" onerror="this.style.display='none'">
+                            <img src="images/products/ayurvedic/IMG_2386.jpg" alt="" class="thumb" data-index="8" onerror="this.style.display='none'">
+                            <img src="images/products/ayurvedic/6beef1e7-09a6-4792-b2c8-1893601cf0d0.jpg" alt="" class="thumb" data-index="9" onerror="this.style.display='none'">
+                            <img src="images/products/ayurvedic/4863d265-38e9-43a4-9f7c-6feed5f39a7b.jpg" alt="" class="thumb" data-index="10" onerror="this.style.display='none'">
                         </div>
-                        <div class="project-videos" data-project="jnnc-hydroponic">
-                            <a href="videos/products/jnnc-hydroponic/IMG_1219.mp4" class="video-link" data-src="videos/products/jnnc-hydroponic/IMG_1219.mp4">
+                        <div class="project-videos" data-project="ayurvedic">
+                            <a href="videos/products/ayurvedic/IMG_2387.mp4" class="video-link" data-src="videos/products/ayurvedic/IMG_2387.mp4">
                                 <i class="fas fa-play"></i> Watch Demo
-                            </a>
-                            <a href="videos/products/jnnc-hydroponic/IMG_1243.mp4" class="video-link" data-src="videos/products/jnnc-hydroponic/IMG_1243.mp4">
-                                <i class="fas fa-play"></i> Watch Demo 2
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card" data-category="firmware">
                     <div class="project-image">
-                        <img src="images/products/hydroponic/IMG_0023.jpg" alt="Hydroponic Project" loading="lazy" onerror="this.src='images/placeholder.svg'">
+                        <img src="images/products/aiota-iot/IMG_1730.jpg" alt="AIOTA IOT Training Panel" loading="lazy" onerror="this.src='images/placeholder.svg'">
                         <div class="project-overlay">
-                            <button class="gallery-btn" aria-label="Open project gallery" data-project="hydroponic" data-index="0">
+                            <button class="gallery-btn" aria-label="Open project gallery" data-project="aiota-iot" data-index="0">
                                 <i class="fas fa-expand"></i>
                             </button>
                         </div>
                     </div>
                     <div class="project-info">
 
-                        <h3 class="project-title">Vithnet Hydroponic System</h3>
-                        <p class="project-desc">Smart hydroponic farming system with automated nutrient delivery, pH monitoring, and environmental control.</p>
-                        <div class="project-gallery-thumbs" data-project="hydroponic">
-                            <img src="images/products/hydroponic/IMG_0023.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                        <h3 class="project-title">AIOTA IOT Training Panel</h3>
+                        <p class="project-desc">Hands-on IoT training panel for education, covering embedded systems, sensors, and connectivity for practical learning.</p>
+                        <div class="project-gallery-thumbs" data-project="aiota-iot">
+                            <img src="images/products/aiota-iot/IMG_1730.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
+                            <img src="images/products/aiota-iot/IMG_1732.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
+                            <img src="images/products/aiota-iot/IMG_1735.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
+                            <img src="images/products/aiota-iot/IMG_1739.jpg" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
+                            <img src="images/products/aiota-iot/IMG_1764.jpg" alt="" class="thumb" data-index="4" onerror="this.style.display='none'">
                         </div>
-                        <div class="project-videos" data-project="hydroponic">
-                            <a href="videos/products/hydroponic/IMG_0028.mp4" class="video-link" data-src="videos/products/hydroponic/IMG_0028.mp4">
+                        <div class="project-videos" data-project="aiota-iot">
+                            <a href="videos/products/aiota-iot/IMG_1540.mp4" class="video-link" data-src="videos/products/aiota-iot/IMG_1540.mp4">
                                 <i class="fas fa-play"></i> Watch Demo
                             </a>
-                            <a href="videos/products/hydroponic/IMG_1519.mp4" class="video-link" data-src="videos/products/hydroponic/IMG_1519.mp4">
+                            <a href="videos/products/aiota-iot/IMG_1741.mp4" class="video-link" data-src="videos/products/aiota-iot/IMG_1741.mp4">
                                 <i class="fas fa-play"></i> Watch Demo 2
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-category="firmware">
-                    <div class="project-info">
-
-                        <h3 class="project-title">Ultrasonic-Triggered Robotic Hand</h3>
-                        <p class="project-desc">An ESP32 prototype that uses ultrasonic distance sensing to trigger a stepper motor and servo.</p>
-                    </div>
-                </div>
-                <div class="project-card" data-category="firmware">
-                    <div class="project-info">
-
-                        <h3 class="project-title">Morse Code Communicator</h3>
-                        <p class="project-desc">An embedded communicator that reads Morse input and plays back letters and phrases. A Python script generates the audio assets stored in LittleFS.</p>
-                    </div>
-                </div>
+            </div>
+        </section>
+        <section class="wrap section about" id="about" aria-labelledby="about-title">
+            <div>
+                <h2 id="about-title">About Deepak</h2>
+                <p>I currently work at <a href="https://www.vithsutra.com/">Vithsutra Technologies</a>, a startup. My engineering work focuses on embedded systems, firmware development, hardware integration, and prototyping.</p>
+                <p><a href="https://www.linkedin.com/company/vithsutra-technologies/home/">Vithsutra Technologies on LinkedIn</a></p>
+            </div>
+            <dl class="capabilities">
+                <div><dt>Firmware &amp; controls</dt><dd>C/C++, ESP32, FreeRTOS, LVGL, NVS, relays and actuators</dd></div>
+                <div><dt>Interfaces &amp; validation</dt><dd>UART, I²C, SPI, CAN loopback, RS485/Modbus, LoRa and ADC/DAC</dd></div>
+                <div><dt>Research &amp; prototyping</dt><dd>Python, sensor integration, PLS regression, OpenCV and TensorFlow Lite</dd></div>
+            </dl>
+        </section>
+        <section class="wrap section prototypes" id="projects" aria-labelledby="projects-title">
+            <div class="section-heading">
+                <h2 id="projects-title">Prototypes &amp; projects</h2>
+            </div>
+            <div class="projects-grid">
                 <div class="project-card" data-category="firmware">
                     <div class="project-image">
                         <img src="images/prototypes/cable-fault/IMG_1499.jpg" alt="Cable Fault Detection" loading="lazy" onerror="this.src='images/placeholder.svg'">
@@ -385,20 +379,6 @@
                     </div>
                 </div>
                 <div class="project-card" data-category="research">
-                    <div class="project-info">
-
-                        <h3 class="project-title">Raspberry Pi Crop Disease Detection</h3>
-                        <p class="project-desc">A crop image classification project using TensorFlow Lite for inference on a Raspberry Pi.</p>
-                    </div>
-                </div>
-                <div class="project-card" data-category="research">
-                    <div class="project-info">
-
-                        <h3 class="project-title">AgriBot Crop Monitoring Rover</h3>
-                        <p class="project-desc">An ESP32 rover prototype with motor control, an LCD, and MQTT telemetry for a crop-monitoring and spray-control node.</p>
-                    </div>
-                </div>
-                <div class="project-card" data-category="research">
                     <div class="project-image">
                         <img src="images/agriculture/IMG_2433.jpg" alt="Agriculture Project" loading="lazy" onerror="this.src='images/placeholder.svg'">
                         <div class="project-overlay">
@@ -427,61 +407,6 @@
                 </div>
                 <div class="project-card" data-category="research">
                     <div class="project-image">
-                        <img src="images/products/ayurvedic/07462d84-5c67-4916-afb8-1d735f685ebf.jpg" alt="Ayurvedic Nadi Pariksha" loading="lazy" onerror="this.src='images/placeholder.svg'">
-                        <div class="project-overlay">
-                            <button class="gallery-btn" aria-label="Open project gallery" data-project="ayurvedic" data-index="0">
-                                <i class="fas fa-expand"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-info">
-
-                        <h3 class="project-title">Ayurvedic Nadi Pariksha Device</h3>
-                        <p class="project-desc">A diagnostic device that uses sensor technology to perform traditional Ayurvedic pulse diagnosis (Nadi Pariksha) digitally.</p>
-                        <div class="project-gallery-thumbs" data-project="ayurvedic">
-                            <img src="images/products/ayurvedic/07462d84-5c67-4916-afb8-1d735f685ebf.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
-                            <img src="images/products/ayurvedic/36E498A6-B053-469D-A266-6E15897FCF07.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
-                            <img src="images/products/ayurvedic/IMG_2385.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
-                            <img src="images/products/ayurvedic/IMG_2388.jpg" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
-                            <img src="images/products/ayurvedic/0A4E623B-61DE-446B-B946-6E0C2550202E.jpg" alt="" class="thumb" data-index="4" onerror="this.style.display='none'">
-                            <img src="images/products/ayurvedic/9aa29d40-de13-463e-b1ee-2a851f0b7e68.jpg" alt="" class="thumb" data-index="5" onerror="this.style.display='none'">
-                            <img src="images/products/ayurvedic/8BD70BD9-9731-49EE-A45C-8CBB4AC82CBB.jpg" alt="" class="thumb" data-index="6" onerror="this.style.display='none'">
-                            <img src="images/products/ayurvedic/IMG_2337.jpg" alt="" class="thumb" data-index="7" onerror="this.style.display='none'">
-                            <img src="images/products/ayurvedic/IMG_2386.jpg" alt="" class="thumb" data-index="8" onerror="this.style.display='none'">
-                            <img src="images/products/ayurvedic/6beef1e7-09a6-4792-b2c8-1893601cf0d0.jpg" alt="" class="thumb" data-index="9" onerror="this.style.display='none'">
-                            <img src="images/products/ayurvedic/4863d265-38e9-43a4-9f7c-6feed5f39a7b.jpg" alt="" class="thumb" data-index="10" onerror="this.style.display='none'">
-                        </div>
-                        <div class="project-videos" data-project="ayurvedic">
-                            <a href="videos/products/ayurvedic/IMG_2387.mp4" class="video-link" data-src="videos/products/ayurvedic/IMG_2387.mp4">
-                                <i class="fas fa-play"></i> Watch Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="research">
-                    <div class="project-info">
-
-                        <h3 class="project-title">Kati Basti Thermal Therapy Ring</h3>
-                        <p class="project-desc">A temperature-controlled hardware prototype combining an ESP32-C3, infrared temperature sensing, a flexible heating pad, and an OLED display.</p>
-                    </div>
-                </div>
-                <div class="project-card" data-category="research">
-                    <div class="project-info">
-
-                        <h3 class="project-title">Silk Worm Disease Detection</h3>
-                        <p class="project-desc">ML-based system for early detection of diseases in silkworms to improve silk production quality and yield.</p>
-                            <div class="project-videos" data-project="silk-worm">
-                            <a href="videos/prototypes/silk-worm/IMG_1501.mp4" class="video-link" data-src="videos/prototypes/silk-worm/IMG_1501.mp4">
-                                <i class="fas fa-play"></i> Watch Demo
-                            </a>
-                            <a href="videos/prototypes/silk-worm/IMG_1500.mp4" class="video-link" data-src="videos/prototypes/silk-worm/IMG_1500.mp4">
-                                <i class="fas fa-play"></i> Watch Demo 2
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="research">
-                    <div class="project-image">
                         <img src="images/innovation/IMG_2592.jpg" alt="Innovation Project" loading="lazy" onerror="this.src='images/placeholder.svg'">
                         <div class="project-overlay">
                             <button class="gallery-btn" aria-label="Open project gallery" data-project="innovation" data-index="0">
@@ -502,31 +427,6 @@
                             <img src="images/innovation/IMG_1708.jpg" alt="" class="thumb" data-index="5" onerror="this.style.display='none'">
                             <img src="images/innovation/IMG_1675.jpg" alt="" class="thumb" data-index="6" onerror="this.style.display='none'">
                             <img src="images/innovation/IMG_1526.jpg" alt="" class="thumb" data-index="7" onerror="this.style.display='none'">
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="software">
-                    <div class="project-image">
-                        <img src="images/products/christy-ai/IMG_2322.jpg" alt="Christy AI Robot" loading="lazy" onerror="this.src='images/placeholder.svg'">
-                        <div class="project-overlay">
-                            <button class="gallery-btn" aria-label="Open project gallery" data-project="christy-ai" data-index="0">
-                                <i class="fas fa-expand"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-info">
-
-                        <h3 class="project-title">Christy AI Teacher Robot</h3>
-                        <p class="project-desc">Built a real-time voice assistant using a LiveKit agent to coordinate speech recognition, model responses, and speech synthesis.</p>
-                        <p class="stack">Python · LiveKit · Deepgram · Cartesia</p>
-                        <a class="source" href="https://github.com/Deepakr011/Christy/blob/main/src/agent.py">View source</a>
-                        <div class="project-gallery-thumbs" data-project="christy-ai">
-                            <img src="images/products/christy-ai/IMG_2322.jpg" alt="" class="thumb active" data-index="0" onerror="this.style.display='none'">
-                            <img src="images/products/christy-ai/IMG_2271.jpg" alt="" class="thumb" data-index="1" onerror="this.style.display='none'">
-                            <img src="images/products/christy-ai/IMG_2224.jpg" alt="" class="thumb" data-index="2" onerror="this.style.display='none'">
-                            <img src="images/products/christy-ai/IMG_2219.jpg" alt="" class="thumb" data-index="3" onerror="this.style.display='none'">
-                            <img src="images/products/christy-ai/IMG_2218.jpg" alt="" class="thumb" data-index="4" onerror="this.style.display='none'">
-                            <img src="images/products/christy-ai/B7ACEF3C-C9D5-46B1-8D0E-884588A011C7.jpg" alt="" class="thumb" data-index="5" onerror="this.style.display='none'">
                         </div>
                     </div>
                 </div>
@@ -580,6 +480,105 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="wrap section additional" id="additional" aria-labelledby="additional-title">
+            <div class="section-heading">
+                <h2 id="additional-title">Additional projects</h2>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card" data-category="firmware">
+                    <div class="project-info">
+                        <h3 class="project-title">AIOTA Peripheral Bring-up &amp; Validation</h3>
+                        <p class="project-desc">Wrote standalone ESP-IDF C tests for peripheral bring-up. The suite includes dual MCP2515 CAN loopback, UART, I²C and SPI loopbacks, an MCP4725 DAC-to-ESP32 ADC check, and W5500 Ethernet, LoRa and SD card demos.</p>
+                        <p class="stack">Embedded C · Bus loopback · Mixed-signal testing</p>
+                        <a class="source" href="https://github.com/Deepakr011/AIOTA_Sensor_testing_code">View source</a>
+                    </div>
+                </article>
+                <div class="project-card" data-category="firmware">
+                    <div class="project-info">
+
+                        <h3 class="project-title">Solar Irrigation Controller</h3>
+                        <p class="project-desc">Implemented a three-zone irrigation scheduler as an ESP32 state machine. The public firmware waits for grid power, checks valve current, sequences pump and valve relays, saves remaining run time in Preferences, and sends status over LoRa.</p>
+                        <p class="stack">ESP32 · C++ · NVS · INA226 · LoRa</p>
+                        <a class="source" href="https://github.com/Deepakr011/irrigation_controller/blob/main/irrigation_shedular.ino">View source</a>
+                    </div>
+                </div>
+                <div class="project-card" data-category="firmware">
+                    <div class="project-info">
+
+                        <h3 class="project-title">LoRa Water Tank Monitoring</h3>
+                        <p class="project-desc">Prototyped a tank monitoring network using RP2040/SX1262 boards and ultrasonic level sensing. A coordinator polls individual nodes for level data. Outdoor point-to-point testing reached about 2 km.</p>
+                        <p class="stack">RP2040 · SX1262 · Ultrasonic sensing · Node polling</p>
+                    </div>
+                </div>
+                <article class="project-card" data-category="research">
+                    <div class="project-info">
+                        <h3 class="project-title">Arecanut Detection &amp; Servo Tracking</h3>
+                        <p class="project-desc">Used YOLO and OpenCV to identify arecanuts in camera frames and map target coordinates to pan and tilt angles. The script sends angle commands over serial to the actuator controller.</p>
+                        <p class="stack">Python · YOLO · OpenCV · Servo control</p>
+                        <a class="source" href="https://github.com/Deepakr011/Python-Areca/blob/main/ARECAdetection.py">View source</a>
+                    </div>
+                </article>
+                <article class="project-card" data-category="firmware">
+                    <div class="project-info">
+                        <h3 class="project-title">Connected Valve Controller</h3>
+                        <p class="project-desc">Prototyped a connected valve-control system with a MicroPython device script and Flutter app in the same repository. A separate MicroPython scheduler implements timed valve control and local state persistence.</p>
+                        <p class="stack">MicroPython · ESP32 · Flutter</p>
+                        <a class="source" href="https://github.com/Deepakr011/smart-valve-controller-app">View source</a>
+                        <a class="source related-source" href="https://github.com/Deepakr011/valve_sheduler/blob/main/esp32_working_good.py">Scheduler source</a>
+                    </div>
+                </article>
+                <div class="project-card" data-category="firmware">
+                    <div class="project-info">
+
+                        <h3 class="project-title">Ultrasonic-Triggered Robotic Hand</h3>
+                        <p class="project-desc">An ESP32 prototype that uses ultrasonic distance sensing to trigger a stepper motor and servo.</p>
+                    </div>
+                </div>
+                <div class="project-card" data-category="firmware">
+                    <div class="project-info">
+
+                        <h3 class="project-title">Morse Code Communicator</h3>
+                        <p class="project-desc">An embedded communicator that reads Morse input and plays back letters and phrases. A Python script generates the audio assets stored in LittleFS.</p>
+                    </div>
+                </div>
+                <div class="project-card" data-category="research">
+                    <div class="project-info">
+
+                        <h3 class="project-title">Raspberry Pi Crop Disease Detection</h3>
+                        <p class="project-desc">A crop image classification project using TensorFlow Lite for inference on a Raspberry Pi.</p>
+                    </div>
+                </div>
+                <div class="project-card" data-category="research">
+                    <div class="project-info">
+
+                        <h3 class="project-title">AgriBot Crop Monitoring Rover</h3>
+                        <p class="project-desc">An ESP32 rover prototype with motor control, an LCD, and MQTT telemetry for a crop-monitoring and spray-control node.</p>
+                    </div>
+                </div>
+                <div class="project-card" data-category="research">
+                    <div class="project-info">
+
+                        <h3 class="project-title">Kati Basti Thermal Therapy Ring</h3>
+                        <p class="project-desc">A temperature-controlled hardware prototype combining an ESP32-C3, infrared temperature sensing, a flexible heating pad, and an OLED display.</p>
+                    </div>
+                </div>
+                <div class="project-card" data-category="research">
+                    <div class="project-info">
+
+                        <h3 class="project-title">Silk Worm Disease Detection</h3>
+                        <p class="project-desc">ML-based system for early detection of diseases in silkworms to improve silk production quality and yield.</p>
+                            <div class="project-videos" data-project="silk-worm">
+                            <a href="videos/prototypes/silk-worm/IMG_1501.mp4" class="video-link" data-src="videos/prototypes/silk-worm/IMG_1501.mp4">
+                                <i class="fas fa-play"></i> Watch Demo
+                            </a>
+                            <a href="videos/prototypes/silk-worm/IMG_1500.mp4" class="video-link" data-src="videos/prototypes/silk-worm/IMG_1500.mp4">
+                                <i class="fas fa-play"></i> Watch Demo 2
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card" data-category="software">
                     <div class="project-info">
 
@@ -617,19 +616,7 @@
                         <p class="project-desc">Deployment and troubleshooting of Dockerized backend services and MQTT connections on Ubuntu virtual machines in Azure.</p>
                     </div>
                 </div>
-                </div>
             </div>
-        </section>
-        <section class="wrap section about" id="about" aria-labelledby="about-title">
-            <div>
-                <h2 id="about-title">About Deepak</h2>
-                <p>I earned a B.E. in Agricultural Engineering from Alva’s Institute of Engineering and Technology in 2025. My experience includes greenhouse automation and IoT firmware at Anmaya Technologies, R&amp;D at Escorts Kubota ETDC, and farm auditing at NisargaWoods Hebbevu Farms.</p>
-            </div>
-            <dl class="capabilities">
-                <div><dt>Firmware &amp; controls</dt><dd>C/C++, ESP32, FreeRTOS, LVGL, NVS, relays and actuators</dd></div>
-                <div><dt>Interfaces &amp; validation</dt><dd>UART, I²C, SPI, CAN loopback, RS485/Modbus, LoRa and ADC/DAC</dd></div>
-                <div><dt>Research &amp; prototyping</dt><dd>Python, sensor integration, PLS regression, OpenCV and TensorFlow Lite</dd></div>
-            </dl>
         </section>
     </main>
     <footer class="site-footer">
