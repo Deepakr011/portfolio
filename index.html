@@ -54,7 +54,9 @@
                     <div class="project-info">
 
                         <h3 class="project-title">IoT & Electronics Training Panel</h3>
-                        <p class="project-desc">Built an ESP32-S3 touchscreen HMI that polls sensors and controls relays over RS485. The firmware uses a FreeRTOS task and queues to move bus updates and relay commands between the Modbus worker and the LVGL interface.</p>
+                        <p class="project-desc">A hands-on training product for college students learning embedded systems, sensor integration, and firmware programming. I designed the industrial automation section so students can build PLC-style control rules on an ESP32-S3 touchscreen using an interactive LVGL interface.</p>
+                        <p class="project-desc">Students select one or more trigger sensors and output devices, choose the sensor input state that triggers the rule, and set how long the outputs stay on. With multiple sensors, AND logic requires all selected conditions and OR logic requires any one.</p>
+                        <p class="project-desc">The panel uses a Waveshare 8-channel relay module and eight digital inputs for NPN and PNP sensors. Supported inputs include inductive and capacitive proximity sensors, PIR motion sensors, limit switches, reed switches, and photoelectric sensors. Outputs include lamps, fans, pumps, buzzers, solenoid door locks, and indicator lights. A FreeRTOS task polls the sensors and controls the relays over RS485 using Modbus RTU.</p>
                         <p class="stack">ESP32-S3 · LVGL v8 · FreeRTOS · Modbus RTU</p>
                         <a class="source" href="https://github.com/Deepakr011/Christ_king_AIOTA_PLC_display/blob/main/09_lvgl_Porting/09_lvgl_Porting.ino">View source</a>
                         <div class="project-gallery-thumbs" data-project="iot-training-panel">
